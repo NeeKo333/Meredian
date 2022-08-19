@@ -95,6 +95,10 @@ h6 {
   font-family: "HKGrotesk";
   src: url("/fonts/HKGrotesk-Regular.otf");
 }
+
+body {
+  overflow-y: hidden;
+}
 body.lock {
   overflow: hidden;
 }
