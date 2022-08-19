@@ -97,7 +97,7 @@ h6 {
 }
 
 body {
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 body.lock {
   overflow: hidden;
