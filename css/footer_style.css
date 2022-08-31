@@ -387,6 +387,7 @@
     line-height: 50px;
   }
   .footer_first_section_conteiner .footer_first_section_info p {
+    margin-top: 20px;
     font-size: 20px;
     max-width: 100%;
     line-height: 30px;

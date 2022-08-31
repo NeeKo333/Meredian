@@ -95,7 +95,6 @@ h6 {
   font-family: "HKGrotesk";
   src: url("/fonts/HKGrotesk-Regular.otf");
 }
-
 body {
   overflow-x: hidden;
 }
@@ -813,11 +812,18 @@ body.lock {
   }
   .main_furniture_slider_conteiner .furniture_slider_info h2 {
     text-align: center;
-    font-size: 40px;
+    font-size: 65px;
     line-height: 120%;
   }
   .main_furniture_slider_conteiner .furniture_slider_info p {
     padding: 0 15px;
+    font-size: 20px;
+  }
+
+  .furniture_slider_info_stars img {
+    width: 150px;
+  }
+  .furniture_slider_info_stars span {
     font-size: 20px;
   }
 }
@@ -840,6 +846,10 @@ body.lock {
 
   .collection_item a {
     padding: 25px 0;
+  }
+
+  .main_get_inspired_block_conteiner .main_get_inspired_block_title h2 {
+    text-align: center;
   }
 }
 @media (max-width: 350px) {

@@ -8,7 +8,7 @@ $HkRegular: "HKGrotesk";
 $size: 120px;
 
 body {
-  // color: #fff;
+  overflow-x: hidden;
   &.lock {
     overflow: hidden;
   }
@@ -661,13 +661,22 @@ body {
       padding: 0 15px;
       h2 {
         text-align: center;
-        font-size: 40px;
+        font-size: 65px;
         line-height: 120%;
       }
       p {
         padding: 0 15px;
         font-size: 20px;
       }
+    }
+  }
+
+  .furniture_slider_info_stars {
+    img {
+      width: 150px;
+    }
+    span {
+      font-size: 20px;
     }
   }
 }
@@ -701,6 +710,14 @@ body {
   .collection_item {
     a {
       padding: 25px 0;
+    }
+  }
+
+  .main_get_inspired_block_conteiner {
+    .main_get_inspired_block_title {
+      h2 {
+        text-align: center;
+      }
     }
   }
 }
