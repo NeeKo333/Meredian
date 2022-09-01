@@ -7,6 +7,46 @@ const paginationButtons = document.getElementsByClassName(
   "catalog_pagination_item"
 );
 
+/*------------range_slider--------------*/
+
+const rangeInput = document.querySelectorAll(".range_input input");
+const priceInput = document.querySelectorAll(".field input");
+const progress = document.querySelector(".progress");
+
+let priceGap = 1000;
+
+rangeInput.forEach((el) => {
+  el.addEventListener("input", (el) => {
+    let minValue = parseInt(rangeInput[0].value);
+    let maxValue = parseInt(rangeInput[1].value);
+    let percent = (minValue / rangeInput[1].max) * 100;
+
+    if (maxValue - minValue < priceGap) {
+      if (el.target.className === "range_min") {
+        rangeInput[0].value = maxValue - priceGap;
+      } else {
+        rangeInput[1].value = minValue + priceGap;
+      }
+    } else {
+      priceInput[0].value = minValue;
+      priceInput[1].value = maxValue;
+      progress.style.left = (minValue / rangeInput[0].max) * 100 + "%";
+      progress.style.right = 100 - (maxValue / rangeInput[1].max) * 100 + "%";
+    }
+
+    for (let i = 0; i < cards.length; i++) {
+      const price = cards[i].lastElementChild.lastElementChild;
+      let current_price = price.innerText.split("£")[2];
+      current_price = Number(current_price.split(" ")[0]);
+      if (current_price < minValue || current_price > maxValue) {
+        cards[i].classList.add("price_hide");
+      } else cards[i].classList.remove("price_hide");
+    }
+  });
+});
+
+/*------------range_slider--------------*/
+
 catalog.innerHTML = "";
 start_cards.forEach((el) => {
   catalog.appendChild(el);
