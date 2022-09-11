@@ -1,11 +1,97 @@
+const lists = document.getElementsByClassName("sub_category_item");
+const catalog = document.querySelector(".catalog_cards");
+
+// const jsCards = [
+//   {
+//     card_name: "sofas",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "love_seats",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "chairs",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "sectionals",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "sectionals",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "ottomans",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "chaise",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "chaise",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "sofas",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     clacard_namess: "love_seats",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "chairs",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "sectionals",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+//   {
+//     card_name: "ottomans",
+//     src: "/img/collection/cards/Mask Group.png",
+//   },
+// ];
+
+// const createCards = (card_name, src) => {
+//   return `
+//         <div class="collection_card ${card_name}">
+//         <img src="${src}"/>
+//         <div class="cards_info">
+//           <div class="cards_info_name">
+//             <p>Serene Linen Deluxe Cloud</p>
+//           </div>
+//           <div class="cards_info_cost">
+//             <span>£2,500.00</span> £2600.00 <span>40% Off</span>
+//           </div>
+//         </div>
+//         </div>`;
+// };
+// const newCards = jsCards
+//   .map((el) => {
+//     return createCards(el.card_name, el.src);
+//   })
+//   .join("");
+
+// catalog.innerHTML += newCards;
+
 let cards = document.getElementsByClassName("collection_card");
 cards = Array.from(cards);
 const start_cards = cards.slice(0, 12);
-const lists = document.getElementsByClassName("sub_category_item");
-const catalog = document.querySelector(".catalog_cards");
+
 const paginationButtons = document.getElementsByClassName(
   "catalog_pagination_item"
 );
+
+const filter_menu = document.querySelector(".filter_burger");
+
+filter_menu.addEventListener("click", () => {
+  const filter = document.querySelector(".collection_filter");
+  filter.classList.toggle("filter_menu_open");
+});
 
 /*------------range_slider--------------*/
 
@@ -47,6 +133,8 @@ rangeInput.forEach((el) => {
 
 /*------------range_slider--------------*/
 
+/*------------pagination--------------*/
+
 catalog.innerHTML = "";
 start_cards.forEach((el) => {
   catalog.appendChild(el);
@@ -72,6 +160,10 @@ for (let i = 0; i < paginationButtons.length; i++) {
     });
   });
 }
+
+/*------------pagination--------------*/
+
+/*------------filters--------------*/
 
 let data = 0;
 for (let i = 0; i < lists.length; i++) {
@@ -116,3 +208,5 @@ for (let i = 0; i < lists.length; i++) {
     }
   });
 }
+
+/*------------filters--------------*/
