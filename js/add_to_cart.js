@@ -1,8 +1,9 @@
-const cart_items = document.querySelectorAll(".collection_card");
+const card_items = document.querySelectorAll(".collection_card");
 const cartIcon = document.querySelector(".cart");
 const cart = document.querySelector(".cart_body");
+const cartList = document.querySelector(".cart_list");
 
-cart_items.forEach((el) => {
+card_items.forEach((el) => {
   el.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
       const id = el.dataset.card_id;
@@ -44,6 +45,7 @@ function addToCart(targetButton, cardId) {
   height: 0px;
   opacity: 0;
 `;
+
   cart_item_img_fly.addEventListener("transitionend", (e) => {
     if (targetButton.classList.contains("_fly")) {
       cart_item_img_fly.remove();
@@ -58,7 +60,6 @@ function updateCart(targetButton, cardId, cardAdd = true) {
   const cartProduct = document.querySelector(
     `[data-cart-card_id = "${cardId}"]`
   );
-  const cartList = document.querySelector(".cart_list");
 
   if (cardAdd) {
     if (cartQty) {
@@ -75,11 +76,10 @@ function updateCart(targetButton, cardId, cardAdd = true) {
     <img src = '${origItemImg}' />
     <div class = 'cart_list_body'>
       <a href ='' class = "cart_list_name">${origItemName}</a>
-      <div class = 'cart_list_qty'>Qty: <span>1</span></div>
-      <a href ='' class = "cart_list_delete">Delete</a>
+      <div class = 'cart_list_qty'>Quantity: <span>1</span></div>
+      <button class = "cart_list_delete">Delete</button>
     </div>
     `;
-    console.log(cartListContent);
     cartList.insertAdjacentHTML(
       "beforeend",
       `<li data-cart-card_id = "${cardId}" class = 'cart_list_item'> ${cartListContent}</li>`
@@ -88,15 +88,50 @@ function updateCart(targetButton, cardId, cardAdd = true) {
     const cartListItemQty = cartProduct.querySelector(".cart_list_qty span");
     cartListItemQty.innerHTML = ++cartListItemQty.innerHTML;
   }
+
+  if (cartList.lastElementChild.tagName != "SPAN") {
+    const empty_cart_span = cartList.querySelector(".empty_cart_span");
+    empty_cart_span.classList.add("empty");
+  }
 }
 
-body.addEventListener("click", (e) => {
+document.body.addEventListener("click", (e) => {
   if (e.target == cartIcon) {
     cartIcon.classList.toggle("open");
-  } else if (e.target != cartIcon && e.target.tagName != "BUTTON") {
+  } else if (
+    e.target != cartIcon &&
+    e.target.tagName != "BUTTON" &&
+    e.target != cart
+  ) {
     cartIcon.classList.remove("open");
   }
   if (cartIcon.classList.contains("open")) {
     cart.classList.add("active");
-  } else cart.classList.remove("active");
+  } else {
+    cart.classList.remove("active");
+  }
+
+  const added_cards = cart.querySelectorAll(".cart_list_item");
+  const cart_body = document.querySelector(".cart_body ");
+  added_cards.forEach((el) => {
+    const cartQty = document.querySelector(".header_icons span");
+    const el_button = el.lastElementChild.lastElementChild;
+    const qty_span = el.querySelector(".cart_list_qty span");
+    const empty_cart_span = cartList.querySelector(".empty_cart_span");
+    // el.lastElementChild.firstElementChild.nextElementSibling.lastElementChild;
+    if (e.target == el_button && qty_span.innerText == "1") {
+      el.closest(".cart_list_item").remove();
+      cartQty.innerHTML = --cartQty.innerHTML;
+    } else if (e.target == el_button && qty_span.innerText != "1") {
+      qty_span.innerHTML = --qty_span.innerHTML;
+      cartQty.innerHTML = --cartQty.innerHTML;
+    }
+
+    if (cartQty.innerText == "0") {
+      cartQty.classList.remove("active");
+      cart_body.classList.remove("active");
+      cartIcon.classList.remove("open");
+      empty_cart_span.classList.remove("empty");
+    }
+  });
 });

@@ -79,6 +79,12 @@ const catalog = document.querySelector(".catalog_cards");
 // catalog.innerHTML += newCards;
 
 let cards = document.getElementsByClassName("collection_card");
+
+const all_qty = document.querySelector(".all_qty");
+all_qty.innerText = cards.length;
+const visible_qty = document.querySelector(".visible_qty");
+visible_qty.innerText = `1 - 12`;
+
 cards = Array.from(cards);
 const start_cards = cards.slice(0, 12);
 
@@ -136,7 +142,7 @@ rangeInput.forEach((el) => {
 /*------------pagination--------------*/
 
 catalog.innerHTML = "";
-start_cards.forEach((el) => {
+start_cards.forEach((el, index) => {
   catalog.appendChild(el);
 });
 
@@ -154,6 +160,10 @@ for (let i = 0; i < paginationButtons.length; i++) {
     let start = (pageNumber - 1) * cardsPerPage;
     let end = start + cardsPerPage;
     let slicedCards = cards.slice(start, end);
+    visible_qty.innerText = `${start} - ${end}`;
+    if (pageNumber == 1) {
+      visible_qty.innerText = `${start + 1} - ${end}`;
+    }
     catalog.innerHTML = "";
     slicedCards.forEach((el) => {
       catalog.appendChild(el);
