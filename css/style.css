@@ -156,6 +156,16 @@ body.lock {
   font-size: 75px;
   line-height: 94px;
   color: #ffffff;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.main_start_block_conteiner .main_start_block_info h2.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_start_block_conteiner .main_start_block_info p {
   max-width: 45%;
@@ -165,6 +175,18 @@ body.lock {
   font-size: 23px;
   line-height: 42px;
   color: #ffffff;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.main_start_block_conteiner .main_start_block_info p.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+  -webkit-transition: all 0.4s ease 0.3s;
+  transition: all 0.4s ease 0.3s;
 }
 .main_start_block_conteiner .main_start_block_info a {
   display: inline-block;
@@ -179,11 +201,25 @@ body.lock {
   letter-spacing: 0.265em;
   text-transform: uppercase;
   color: #ffffff;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: background-color 0.1s ease 0s;
+  transition: background-color 0.1s ease 0s;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.main_start_block_conteiner .main_start_block_info a.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
+  -webkit-transition: all 0.5s ease 0.4s;
+  transition: all 0.5s ease 0.4s;
 }
 .main_start_block_conteiner .main_start_block_info a:hover {
   background-color: rgba(181, 130, 105, 0.7);
+  -webkit-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
 }
 
 /*--------------------------------------------------------------------------------------------*/
@@ -206,6 +242,16 @@ body.lock {
   font-size: 75px;
   line-height: 94px;
   color: #161616;
+  -webkit-transform: translate(0px, 80%);
+          transform: translate(0px, 80%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0.2s;
+  transition: all 0.6s ease 0.2s;
+}
+.main_collection_block_conteiner h2.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_collection_block_conteiner p {
   text-align: center;
@@ -215,6 +261,16 @@ body.lock {
   font-size: 25px;
   line-height: 33px;
   color: #161616;
+  -webkit-transform: translate(0px, 60%);
+          transform: translate(0px, 60%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0.2s;
+  transition: all 0.6s ease 0.2s;
+}
+.main_collection_block_conteiner p.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .collection_first_block {
@@ -267,6 +323,16 @@ body.lock {
   background-size: 0px 100%;
   -webkit-transition: background-size 0.4s;
   transition: background-size 0.4s;
+  -webkit-transform: translate(0px, 10%);
+          transform: translate(0px, 10%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+.collection_item a.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .collection_item a:hover {
   background-size: 100% 100%;
@@ -303,6 +369,16 @@ body.lock {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0.1s;
+  transition: all 0.6s ease 0.1s;
+}
+.accomplishments_item.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .accomplishments_item img {
   max-width: 100%;
@@ -360,6 +436,16 @@ body.lock {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-transform: translate(0px, 80%);
+          transform: translate(0px, 80%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0.2s;
+  transition: all 0.6s ease 0.2s;
+}
+.main_slider_conteiner h2.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_slider_conteiner p {
   font-family: "HKGrotesk";
@@ -371,6 +457,16 @@ body.lock {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-transform: translate(0px, 60%);
+          transform: translate(0px, 60%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0.3s;
+  transition: all 0.6s ease 0.3s;
+}
+.main_slider_conteiner p.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_slider_conteiner .main_slider {
   margin-top: 90px;
@@ -487,6 +583,16 @@ body.lock {
   line-height: 42px;
   letter-spacing: 7px;
   color: #f5f3ed;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+.main_commited_block_conteiner h2.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_commited_block_conteiner p {
   font-family: "Outfit";
@@ -497,6 +603,16 @@ body.lock {
   text-align: center;
   text-transform: capitalize;
   color: #f5f3ed;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+.main_commited_block_conteiner p.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_commited_block_conteiner p span {
   font-family: "Outfit";
@@ -538,6 +654,16 @@ body.lock {
   font-size: 75px;
   line-height: 156.84%;
   color: #161616;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+.main_furniture_slider_conteiner .furniture_slider_info h2.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_furniture_slider_conteiner .furniture_slider_info p {
   font-family: "HKGrotesk";
@@ -547,6 +673,16 @@ body.lock {
   line-height: 43px;
   /* or 172% */
   color: #000000;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+.main_furniture_slider_conteiner .furniture_slider_info p.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_furniture_slider_conteiner .furniture_slider_info .furniture_slider_info_stars {
   display: -webkit-box;
@@ -556,6 +692,16 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0.3s;
+  transition: all 0.6s ease 0.3s;
+}
+.main_furniture_slider_conteiner .furniture_slider_info .furniture_slider_info_stars.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_furniture_slider_conteiner .furniture_slider_info .furniture_slider_info_stars span {
   font-family: "Outfit";
@@ -671,6 +817,16 @@ body.lock {
           flex: 1 1 auto;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease 0.3s;
+  transition: all 0.6s ease 0.3s;
+}
+.main_get_inspired_block_conteiner .main_get_inspired_block_title.scroll {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 .main_get_inspired_block_conteiner .main_get_inspired_block_title h2 {
   font-family: "Outfit";
@@ -850,6 +1006,14 @@ body.lock {
 
   .main_get_inspired_block_conteiner .main_get_inspired_block_title h2 {
     text-align: center;
+  }
+}
+@media (max-width: 361px) {
+  .main_start_block_conteiner .main_start_block_info h2 {
+    font-size: 34px;
+  }
+  .main_start_block_conteiner .main_start_block_info p {
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {

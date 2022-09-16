@@ -593,6 +593,7 @@ input[type=range]::-moz-range-thumb {
   width: 20px;
   height: 15px;
   top: -30px;
+  cursor: pointer;
 }
 
 .collection_catalog {
@@ -672,6 +673,8 @@ input[type=range]::-moz-range-thumb {
   font-size: 22px;
   line-height: 33px;
   color: #888887;
+  max-height: 33px;
+  overflow: hidden;
 }
 .collection_catalog .catalog_cards .collection_card .cards_info .cards_info_cost {
   font-family: "HK Grotesk";
@@ -680,6 +683,8 @@ input[type=range]::-moz-range-thumb {
   font-size: 22px;
   line-height: 33px;
   color: #c4c4c4;
+  max-height: 33px;
+  overflow: hidden;
 }
 .collection_catalog .catalog_cards .collection_card .cards_info .cards_info_cost span {
   color: #ff5b5b;
@@ -935,6 +940,13 @@ input[type=range]::-moz-range-thumb {
   }
 }
 @media (max-width: 768.98px) {
+  .title_block .title_block_image .title_block_image_title {
+    font-size: 45px;
+  }
+  .title_block .title_block_image .timer span {
+    font-size: 50px;
+  }
+
   .collection_catalog .catalog_cards .collection_card img {
     width: 500px;
     overflow: hidden;
@@ -949,7 +961,7 @@ input[type=range]::-moz-range-thumb {
     z-index: 29;
     background-color: #3a5041;
     left: 0;
-    width: 50%;
+    width: 80%;
     margin-top: 30px;
     padding-bottom: 30px;
   }
@@ -1017,11 +1029,70 @@ input[type=range]::-moz-range-thumb {
     display: none;
   }
 }
+@media (max-width: 768.98px) {
+  .title_block .title_block_image .title_block_image_title {
+    text-align: center;
+  }
+  .title_block .title_block_image .timer span {
+    font-size: 45px;
+  }
+}
 @media (max-width: 532.98px) {
+  .collection_catalog {
+    max-width: 100%;
+  }
   .collection_catalog .catalog_cards .collection_card {
     margin-bottom: 0;
   }
   .collection_catalog .catalog_cards .collection_card img {
     width: 350px;
+  }
+
+  .collection_title .collection_select form select {
+    max-width: 180px;
+  }
+
+  .collection_filter .category .category_item {
+    width: 80%;
+  }
+  .collection_filter .category .category_item::after, .collection_filter .category .category_item::before {
+    right: -5px;
+    width: 15px;
+  }
+  .collection_filter .category .category_item:nth-child(1)::after, .collection_filter .category .category_item:nth-child(1)::before {
+    right: -5px;
+    width: 15px;
+  }
+}
+@media (max-width: 400.98px) {
+  .title_block .title_block_image .title_block_image_title {
+    text-align: center;
+  }
+  .title_block .title_block_image .timer {
+    gap: 10px;
+  }
+  .title_block .title_block_image .timer span {
+    font-size: 40px;
+  }
+}
+@media (max-width: 376.98px) {
+  .title_block .title_block_image .title_block_image_title {
+    text-align: center;
+    font-size: 40px;
+  }
+  .title_block .title_block_image .timer {
+    gap: 10px;
+    font-size: 36px;
+  }
+  .title_block .title_block_image .timer span {
+    font-size: 36px;
+  }
+
+  .collection_catalog .catalog_cards .collection_card img {
+    width: 280px;
+  }
+
+  .collection_title .collection_text {
+    font-size: 35px;
   }
 }
