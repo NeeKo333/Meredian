@@ -1,6 +1,4 @@
-window.addEventListener("load", addToCart);
-
-function addToCart() {
+export function addToCart() {
   const card_items = document.querySelectorAll(".collection_card");
   const cartIcon = document.querySelector(".cart");
   const cart = document.querySelector(".cart_body");

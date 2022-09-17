@@ -1,6 +1,4 @@
-window.addEventListener("load", filterFn);
-
-function filterFn() {
+export function filterFn() {
   const lists = document.getElementsByClassName("sub_category_item");
   const catalog = document.querySelector(".catalog_cards");
 

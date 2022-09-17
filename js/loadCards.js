@@ -1,3 +1,5 @@
+import { addToCart } from "/js/add_to_cart.js";
+import { filterFn } from "/js/filter.js";
 getGardsFromFile();
 
 async function getGardsFromFile() {
@@ -7,6 +9,8 @@ async function getGardsFromFile() {
   if (response.ok) {
     let result = await response.json();
     loadCards(result);
+    addToCart();
+    filterFn();
   } else {
     alert("Data base Error!");
   }

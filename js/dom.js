@@ -1,3 +1,6 @@
+import { addToCart } from "/js/add_to_cart.js";
+addToCart();
+
 // const conteiner = document.querySelector(
 //   ".main_accomplishments_block_conteiner"
 // );
