@@ -5,7 +5,7 @@
 }
 $HkRegular: "HKGrotesk";
 $Green: #3a5041;
-$var1: #ffeedd;
+$var1: #ffff;
 $size: 120px;
 
 body {
@@ -542,7 +542,8 @@ input[type="range"]::-moz-range-thumb {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    button {
+    .catalog_pagination_item {
+      display: none;
       padding: 20px 30px;
       border: 1.2466px solid #545454;
       border-radius: 7.47959px;
@@ -551,8 +552,12 @@ input[type="range"]::-moz-range-thumb {
       &:hover,
       &:active,
       &.active {
+        display: block;
         background-color: #b58269;
         color: #ffffff;
+      }
+      &.hide_pag {
+        display: block;
       }
     }
   }

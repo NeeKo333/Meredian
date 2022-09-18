@@ -1,85 +1,18 @@
 export function filterFn() {
   const lists = document.getElementsByClassName("sub_category_item");
   const catalog = document.querySelector(".catalog_cards");
-
-  // const jsCards = [
-  //   {
-  //     card_name: "sofas",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "love_seats",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "chairs",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "sectionals",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "sectionals",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "ottomans",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "chaise",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "chaise",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "sofas",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     clacard_namess: "love_seats",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "chairs",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "sectionals",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  //   {
-  //     card_name: "ottomans",
-  //     src: "/img/collection/cards/Mask Group.png",
-  //   },
-  // ];
-
-  // const createCards = (card_name, src) => {
-  //   return `
-  //         <div class="collection_card ${card_name}">
-  //         <img src="${src}"/>
-  //         <div class="cards_info">
-  //           <div class="cards_info_name">
-  //             <p>Serene Linen Deluxe Cloud</p>
-  //           </div>
-  //           <div class="cards_info_cost">
-  //             <span>£2,500.00</span> £2600.00 <span>40% Off</span>
-  //           </div>
-  //         </div>
-  //         </div>`;
-  // };
-  // const newCards = jsCards
-  //   .map((el) => {
-  //     return createCards(el.card_name, el.src);
-  //   })
-  //   .join("");
-
-  // catalog.innerHTML += newCards;
-
   let cards = document.getElementsByClassName("collection_card");
+
+  const catalog_pagination = document.querySelector(".catalog_pagination");
+  const cardsPerPage = 12;
+  let paginationBtnsQty = Math.ceil(cards.length / cardsPerPage);
+  for (let i = 0; i < paginationBtnsQty; i++) {
+    const button = document.createElement("button");
+    button.classList.add("catalog_pagination_item");
+    button.innerText = i + 1;
+    catalog_pagination.appendChild(button);
+  }
+  catalog_pagination.firstElementChild.classList.add("active");
 
   const all_qty = document.querySelector(".all_qty");
   all_qty.innerText = cards.length;
@@ -89,7 +22,7 @@ export function filterFn() {
   cards = Array.from(cards);
   const start_cards = cards.slice(0, 12);
 
-  const paginationButtons = document.getElementsByClassName(
+  let paginationButtons = document.getElementsByClassName(
     "catalog_pagination_item"
   );
 
@@ -142,6 +75,57 @@ export function filterFn() {
 
   /*------------pagination--------------*/
 
+  function paginationHide(el, index) {
+    if (el.nextElementSibling && el.previousElementSibling) {
+      return [
+        Number(el.previousElementSibling.innerText) - 1,
+        Number(el.innerText) - 1,
+        Number(el.nextElementSibling.innerText) - 1,
+      ];
+    } else if (!el.nextElementSibling) {
+      return [
+        Number(el.previousElementSibling.innerText) - 1,
+        Number(el.previousElementSibling.previousElementSibling.innerText) - 1,
+        Number(el.innerText) - 1,
+      ];
+    } else {
+      return [
+        Number(el.innerText) - 1,
+        Number(el.nextElementSibling.innerText) - 1,
+        Number(el.nextElementSibling.nextElementSibling.innerText) - 1,
+      ];
+    }
+  }
+
+  catalog_pagination.firstElementChild.classList.add("hide_pag");
+  catalog_pagination.firstElementChild.nextElementSibling.classList.add(
+    "hide_pag"
+  );
+  catalog_pagination.firstElementChild.nextElementSibling.nextElementSibling.classList.add(
+    "hide_pag"
+  );
+
+  paginationButtons = Array.from(paginationButtons);
+
+  paginationButtons.forEach((el, index) => {
+    el.addEventListener("click", (e) => {
+      const visible_pagination = paginationHide(el, index);
+      console.log(visible_pagination);
+      paginationButtons.forEach((elem) => {
+        if (elem.classList.contains("hide_pag")) {
+          elem.classList.remove("hide_pag");
+        }
+      });
+      for (let i = 0; i < paginationButtons.length; i++) {
+        for (let j = 0; j < visible_pagination.length; j++) {
+          if (i === visible_pagination[j]) {
+            paginationButtons[i].classList.add("hide_pag");
+          }
+        }
+      }
+    });
+  });
+
   catalog.innerHTML = "";
   start_cards.forEach((el, index) => {
     catalog.appendChild(el);
@@ -157,7 +141,6 @@ export function filterFn() {
       el.target.classList.add("active");
 
       let pageNumber = Number(el.target.innerText);
-      const cardsPerPage = 12;
       let start = (pageNumber - 1) * cardsPerPage;
       let end = start + cardsPerPage;
       let slicedCards = cards.slice(start, end);

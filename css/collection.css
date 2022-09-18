@@ -701,16 +701,21 @@ input[type=range]::-moz-range-thumb {
           align-items: center;
   gap: 20px;
 }
-.collection_catalog .catalog_pagination button {
+.collection_catalog .catalog_pagination .catalog_pagination_item {
+  display: none;
   padding: 20px 30px;
   border: 1.2466px solid #545454;
   border-radius: 7.47959px;
   background: rgba(0, 0, 0, 0);
   font-size: 22px;
 }
-.collection_catalog .catalog_pagination button:hover, .collection_catalog .catalog_pagination button:active, .collection_catalog .catalog_pagination button.active {
+.collection_catalog .catalog_pagination .catalog_pagination_item:hover, .collection_catalog .catalog_pagination .catalog_pagination_item:active, .collection_catalog .catalog_pagination .catalog_pagination_item.active {
+  display: block;
   background-color: #b58269;
   color: #ffffff;
+}
+.collection_catalog .catalog_pagination .catalog_pagination_item.hide_pag {
+  display: block;
 }
 
 /*----------Custom------------*/
@@ -743,7 +748,7 @@ input[type=range]::-moz-range-thumb {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #ffeedd;
+  background: white;
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {

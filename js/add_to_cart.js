@@ -9,22 +9,6 @@ export function addToCart() {
   cartList.innerHTML = localStorage.getItem("cartList");
   cartQty.className = localStorage.getItem("cartListClass");
 
-  // const test = document.querySelector(".bonq");
-
-  // test.addEventListener("click", (el) => {
-  //   var opened = window.open("");
-  //   opened.document.write(
-  //     `<html>
-  //     <head>
-  //           <title>MyTitle</title>
-  //     </head>
-  //     <body>
-  //           test
-  //     </body>
-  //     </html>`
-  //   );
-  // });
-
   if (cartQty.className === "null") {
     cartQty.className = "cart_span_qty";
   }
@@ -60,8 +44,6 @@ export function addToCart() {
 
   function addToCart(targetButton, cardId) {
     targetButton.classList.add("_fly");
-
-    //   const cart_item = targetButton.closest(".collection_card");
     const cart_item = document.querySelector(`[data-card_id = "${cardId}"]`);
     const cart_item_img = cart_item.querySelector("img");
     const cart_item_img_fly = cart_item_img.cloneNode();
@@ -113,7 +95,6 @@ export function addToCart() {
         cartQty.innerHTML = ++cartQty.innerHTML;
         localStorageUpdateQty();
       }
-      // else cartIcon.insertAdjacentHTML("afterend", `<span>1</span>`);
     }
     if (!cartProduct) {
       const origItem = document.querySelector(`[data-card_id = "${cardId}"]`);
@@ -165,7 +146,6 @@ export function addToCart() {
       const el_button = el.lastElementChild.lastElementChild;
       const qty_span = el.querySelector(".cart_list_qty span");
       const empty_cart_span = cartList.querySelector(".empty_cart_span");
-      // el.lastElementChild.firstElementChild.nextElementSibling.lastElementChild;
       if (e.target == el_button && qty_span.innerText == "1") {
         el.closest(".cart_list_item").remove();
         localStorageUpdateCart();
