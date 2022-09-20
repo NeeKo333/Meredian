@@ -57,7 +57,7 @@ body {
       font-size: 75px;
       line-height: 94px;
       color: #ffffff;
-      transform: translate(0px, 120%);
+      transform: translate(120%, 0px);
       opacity: 0;
       transition: all 0.5s ease 0s;
       &.scroll {
@@ -73,13 +73,13 @@ body {
       font-size: 23px;
       line-height: 42px;
       color: #ffffff;
-      transform: translate(0px, 120%);
+      transform: translate(-120%, 0px);
       opacity: 0;
       transition: all 0.4s ease 0s;
       &.scroll {
         transform: translate(0px, 0px);
         opacity: 1;
-        transition: all 0.4s ease 0.3s;
+        transition: all 0.4s ease 0.15s;
       }
     }
     a {
@@ -102,7 +102,7 @@ body {
       &.scroll {
         transform: translate(0px, 0px);
         opacity: 1;
-        transition: all 0.5s ease 0.4s;
+        transition: all 0.5s ease 0s;
       }
       &:hover {
         background-color: rgba($color: #b58269, $alpha: 0.7);
@@ -127,7 +127,7 @@ body {
     font-size: 75px;
     line-height: 94px;
     color: #161616;
-    transform: translate(0px, 80%);
+    transform: translate(80%, 0px);
     opacity: 0;
     transition: all 0.6s ease 0.2s;
     &.scroll {
@@ -143,7 +143,7 @@ body {
     font-size: 25px;
     line-height: 33px;
     color: #161616;
-    transform: translate(0px, 60%);
+    transform: translate(-60%, 0px);
     opacity: 0;
     transition: all 0.6s ease 0.2s;
     &.scroll {
@@ -192,13 +192,6 @@ body {
     background-repeat: no-repeat;
     background-size: 0px 100%;
     transition: background-size 0.4s;
-    transform: translate(0px, 10%);
-    opacity: 0;
-    transition: all 0.6s ease 0s;
-    &.scroll {
-      transform: translate(0px, 0px);
-      opacity: 1;
-    }
 
     &:hover {
       background-size: 100% 100%;
@@ -225,11 +218,11 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  transform: translate(0px, 40%);
+  transform: scale(0);
   opacity: 0;
-  transition: all 0.6s ease 0.1s;
+  transition: all 0.8s ease 0s;
   &.scroll {
-    transform: translate(0px, 0px);
+    transform: scale(1);
     opacity: 1;
   }
   img {
@@ -284,7 +277,7 @@ body {
     line-height: 94px;
     color: #161616;
     align-self: center;
-    transform: translate(0px, 80%);
+    transform: translate(80%, 0px);
     opacity: 0;
     transition: all 0.6s ease 0.2s;
     &.scroll {
@@ -300,9 +293,9 @@ body {
     line-height: 33px;
     color: #161616;
     align-self: center;
-    transform: translate(0px, 60%);
+    transform: translate(-60%, 0px);
     opacity: 0;
-    transition: all 0.6s ease 0.3s;
+    transition: all 0.6s ease 0.2s;
     &.scroll {
       transform: translate(0px, 0px);
       opacity: 1;
@@ -608,7 +601,7 @@ body {
   .main_get_inspired_block_title {
     flex: 1 1 auto;
     align-self: flex-start;
-    transform: translate(0px, 40%);
+    transform: translate(-60%, 0px);
     opacity: 0;
     transition: all 0.6s ease 0.3s;
     &.scroll {
@@ -860,6 +853,42 @@ body {
     .swiper-button-next,
     .swiper-button-prev {
       display: none;
+    }
+  }
+
+  .main_collection_block_conteiner {
+    h2 {
+      font-size: 65px;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+  .main_slider_conteiner {
+    h2 {
+      font-size: 65px;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+
+  .main_furniture_slider_conteiner {
+    .furniture_slider_info {
+      h2 {
+        font-size: 55px;
+      }
+      p {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .main_get_inspired_block_conteiner {
+    .main_get_inspired_block_title {
+      h2 {
+        font-size: 62px;
+      }
     }
   }
 }

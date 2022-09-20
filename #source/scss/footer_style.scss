@@ -67,7 +67,7 @@ $Green: #3a5041;
   align-items: center;
   width: 220px;
   height: 50px;
-  background-color: #ffffff;
+  background-color: rgba($color: #ffffff, $alpha: 1);
   padding: 20px 40px 20px 30px;
   font-family: $HkRegular;
   font-style: normal;
@@ -75,6 +75,17 @@ $Green: #3a5041;
   font-size: 19px;
   line-height: 33px;
   color: #232323;
+
+  background-image: linear-gradient(rgba(#0000, $alpha: 0.7));
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 0%;
+  transition: background-size 0.3s;
+
+  &:hover {
+    background-size: 100% 100%;
+    color: rgba(226, 212, 212, 1);
+  }
 }
 
 .footer_second_section {

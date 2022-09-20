@@ -80,7 +80,7 @@
           align-items: center;
   width: 220px;
   height: 50px;
-  background-color: #ffffff;
+  background-color: white;
   padding: 20px 40px 20px 30px;
   font-family: "HKGrotesk";
   font-style: normal;
@@ -88,6 +88,17 @@
   font-size: 19px;
   line-height: 33px;
   color: #232323;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7));
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 0%;
+  -webkit-transition: background-size 0.3s;
+  transition: background-size 0.3s;
+}
+.footer_contact_link:hover {
+  background-size: 100% 100%;
+  color: rgb(226, 212, 212);
 }
 
 .footer_second_section {

@@ -156,8 +156,8 @@ body.lock {
   font-size: 75px;
   line-height: 94px;
   color: #ffffff;
-  -webkit-transform: translate(0px, 120%);
-          transform: translate(0px, 120%);
+  -webkit-transform: translate(120%, 0px);
+          transform: translate(120%, 0px);
   opacity: 0;
   -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
@@ -175,8 +175,8 @@ body.lock {
   font-size: 23px;
   line-height: 42px;
   color: #ffffff;
-  -webkit-transform: translate(0px, 120%);
-          transform: translate(0px, 120%);
+  -webkit-transform: translate(-120%, 0px);
+          transform: translate(-120%, 0px);
   opacity: 0;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
@@ -185,8 +185,8 @@ body.lock {
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
   opacity: 1;
-  -webkit-transition: all 0.4s ease 0.3s;
-  transition: all 0.4s ease 0.3s;
+  -webkit-transition: all 0.4s ease 0.15s;
+  transition: all 0.4s ease 0.15s;
 }
 .main_start_block_conteiner .main_start_block_info a {
   display: inline-block;
@@ -213,8 +213,8 @@ body.lock {
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
   opacity: 1;
-  -webkit-transition: all 0.5s ease 0.4s;
-  transition: all 0.5s ease 0.4s;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 .main_start_block_conteiner .main_start_block_info a:hover {
   background-color: rgba(181, 130, 105, 0.7);
@@ -242,8 +242,8 @@ body.lock {
   font-size: 75px;
   line-height: 94px;
   color: #161616;
-  -webkit-transform: translate(0px, 80%);
-          transform: translate(0px, 80%);
+  -webkit-transform: translate(80%, 0px);
+          transform: translate(80%, 0px);
   opacity: 0;
   -webkit-transition: all 0.6s ease 0.2s;
   transition: all 0.6s ease 0.2s;
@@ -261,8 +261,8 @@ body.lock {
   font-size: 25px;
   line-height: 33px;
   color: #161616;
-  -webkit-transform: translate(0px, 60%);
-          transform: translate(0px, 60%);
+  -webkit-transform: translate(-60%, 0px);
+          transform: translate(-60%, 0px);
   opacity: 0;
   -webkit-transition: all 0.6s ease 0.2s;
   transition: all 0.6s ease 0.2s;
@@ -323,16 +323,6 @@ body.lock {
   background-size: 0px 100%;
   -webkit-transition: background-size 0.4s;
   transition: background-size 0.4s;
-  -webkit-transform: translate(0px, 10%);
-          transform: translate(0px, 10%);
-  opacity: 0;
-  -webkit-transition: all 0.6s ease 0s;
-  transition: all 0.6s ease 0s;
-}
-.collection_item a.scroll {
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-  opacity: 1;
 }
 .collection_item a:hover {
   background-size: 100% 100%;
@@ -369,15 +359,15 @@ body.lock {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
-  -webkit-transform: translate(0px, 40%);
-          transform: translate(0px, 40%);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   opacity: 0;
-  -webkit-transition: all 0.6s ease 0.1s;
-  transition: all 0.6s ease 0.1s;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 .accomplishments_item.scroll {
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 .accomplishments_item img {
@@ -436,8 +426,8 @@ body.lock {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-transform: translate(0px, 80%);
-          transform: translate(0px, 80%);
+  -webkit-transform: translate(80%, 0px);
+          transform: translate(80%, 0px);
   opacity: 0;
   -webkit-transition: all 0.6s ease 0.2s;
   transition: all 0.6s ease 0.2s;
@@ -457,11 +447,11 @@ body.lock {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-transform: translate(0px, 60%);
-          transform: translate(0px, 60%);
+  -webkit-transform: translate(-60%, 0px);
+          transform: translate(-60%, 0px);
   opacity: 0;
-  -webkit-transition: all 0.6s ease 0.3s;
-  transition: all 0.6s ease 0.3s;
+  -webkit-transition: all 0.6s ease 0.2s;
+  transition: all 0.6s ease 0.2s;
 }
 .main_slider_conteiner p.scroll {
   -webkit-transform: translate(0px, 0px);
@@ -817,8 +807,8 @@ body.lock {
           flex: 1 1 auto;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  -webkit-transform: translate(0px, 40%);
-          transform: translate(0px, 40%);
+  -webkit-transform: translate(-60%, 0px);
+          transform: translate(-60%, 0px);
   opacity: 0;
   -webkit-transition: all 0.6s ease 0.3s;
   transition: all 0.6s ease 0.3s;
@@ -1029,5 +1019,30 @@ body.lock {
   .image_slider .swiper-button-next,
 .image_slider .swiper-button-prev {
     display: none;
+  }
+
+  .main_collection_block_conteiner h2 {
+    font-size: 65px;
+  }
+  .main_collection_block_conteiner p {
+    font-size: 22px;
+  }
+
+  .main_slider_conteiner h2 {
+    font-size: 65px;
+  }
+  .main_slider_conteiner p {
+    font-size: 22px;
+  }
+
+  .main_furniture_slider_conteiner .furniture_slider_info h2 {
+    font-size: 55px;
+  }
+  .main_furniture_slider_conteiner .furniture_slider_info p {
+    font-size: 22px;
+  }
+
+  .main_get_inspired_block_conteiner .main_get_inspired_block_title h2 {
+    font-size: 62px;
   }
 }
