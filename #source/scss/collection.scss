@@ -563,6 +563,19 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
+.pagination_arrow {
+  padding: 25px 30px;
+
+  border: 1px solid #545454;
+  border-radius: 6px;
+  &:hover {
+    background-color: #b58269;
+  }
+  &:active {
+    background-color: rgba($color: #b58269, $alpha: 0.8);
+  }
+}
+
 /*----------Custom------------*/
 
 .hide,

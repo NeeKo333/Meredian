@@ -1,6 +1,7 @@
 import { addToCart } from "/js/add_to_cart.js";
 import { filterFn } from "/js/filter.js";
-getGardsFromFile();
+
+/*------------functions--------------*/
 
 async function getGardsFromFile() {
   const file = "json/cards.json";
@@ -41,3 +42,7 @@ function loadCards(data) {
     itemCatalog.innerHTML += tamplate;
   });
 }
+
+/*------------functions--------------*/
+
+getGardsFromFile();

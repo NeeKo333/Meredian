@@ -9,38 +9,7 @@ export function addToCart() {
   cartList.innerHTML = localStorage.getItem("cartList");
   cartQty.className = localStorage.getItem("cartListClass");
 
-  if (cartQty.className === "null") {
-    cartQty.className = "cart_span_qty";
-  }
-
-  if (cartList.innerHTML === "") {
-    const el = document.createElement("span");
-    el.classList.add("empty_cart_span");
-    el.innerText = "Cart is Empty!";
-    cartList.appendChild(el);
-  }
-
-  card_items.forEach((el) => {
-    el.addEventListener("click", (e) => {
-      if (e.target.tagName === "BUTTON") {
-        const id = el.dataset.card_id;
-        addToCart(e.target, id);
-      }
-    });
-  });
-
-  function localStorageUpdateCart() {
-    let cartListStor = cartList.innerHTML;
-    localStorage.setItem("cartList", cartListStor);
-  }
-
-  function localStorageUpdateQty() {
-    let cartListQtyStor = cartQty.innerHTML;
-    localStorage.setItem("cartListQty", cartListQtyStor);
-
-    let cartListQtyClass = cartQty.className;
-    localStorage.setItem("cartListClass", cartListQtyClass);
-  }
+  /*------------functions--------------*/
 
   function addToCart(targetButton, cardId) {
     targetButton.classList.add("_fly");
@@ -84,6 +53,19 @@ export function addToCart() {
     });
   }
 
+  function localStorageUpdateCart() {
+    let cartListStor = cartList.innerHTML;
+    localStorage.setItem("cartList", cartListStor);
+  }
+
+  function localStorageUpdateQty() {
+    let cartListQtyStor = cartQty.innerHTML;
+    localStorage.setItem("cartListQty", cartListQtyStor);
+
+    let cartListQtyClass = cartQty.className;
+    localStorage.setItem("cartListClass", cartListQtyClass);
+  }
+
   function updateCart(targetButton, cardId, cardAdd = true) {
     const cartProduct = document.querySelector(
       `[data-cart-card_id = "${cardId}"]`
@@ -123,6 +105,28 @@ export function addToCart() {
       empty_cart_span.classList.add("empty");
     }
   }
+
+  /*------------functions--------------*/
+
+  if (cartQty.className === "null") {
+    cartQty.className = "cart_span_qty";
+  }
+
+  if (cartList.innerHTML === "") {
+    const el = document.createElement("span");
+    el.classList.add("empty_cart_span");
+    el.innerText = "Cart is Empty!";
+    cartList.appendChild(el);
+  }
+
+  card_items.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        const id = el.dataset.card_id;
+        addToCart(e.target, id);
+      }
+    });
+  });
 
   document.body.addEventListener("click", (e) => {
     if (e.target == cartIcon) {
