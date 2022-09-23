@@ -854,7 +854,7 @@ body.lock {
   transition: opacity 1s ease 0s;
 }
 .scroll_to_top img {
-  max-width: 75%;
+  max-width: 45%;
 }
 .scroll_to_top.visible {
   opacity: 1;
@@ -865,6 +865,18 @@ body.lock {
   background-color: rgba(136, 136, 135, 0.2);
 }
 
+/*--------------------------------------------------------------------------------------------*/
+@media (max-width: 1626px) {
+  .main_get_inspired_block_conteiner .main_get_inspired_block_items a {
+    padding: 15px 35px;
+  }
+}
+@media (max-width: 1330px) {
+  .main_get_inspired_block_conteiner .main_get_inspired_block_items a {
+    padding: 15px 15px;
+    left: 1.5%;
+  }
+}
 @media (max-width: 983px) {
   .collection_first_block,
 .collection_second_block {

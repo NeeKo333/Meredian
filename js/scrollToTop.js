@@ -8,6 +8,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
+function updateArrow() {
+  if (window.scrollY > 350) {
+    scrollButton.classList.add("visible");
+  }
+}
+updateArrow();
 scrollButton.addEventListener("click", () => {
   let offset = window.scrollY;
   scrollToTop();

@@ -640,7 +640,7 @@ body {
   transition: opacity 1s ease 0s;
 
   img {
-    max-width: 75%;
+    max-width: 45%;
   }
   &.visible {
     opacity: 1;
@@ -648,6 +648,29 @@ body {
   &:hover {
     transition: background-color 0.3s ease 0s;
     background-color: rgba($color: #888887, $alpha: 0.2);
+  }
+}
+
+/*--------------------------------------------------------------------------------------------*/
+
+@media (max-width: 1626px) {
+  .main_get_inspired_block_conteiner {
+    .main_get_inspired_block_items {
+      a {
+        padding: 15px 35px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1330px) {
+  .main_get_inspired_block_conteiner {
+    .main_get_inspired_block_items {
+      a {
+        padding: 15px 15px;
+        left: 1.5%;
+      }
+    }
   }
 }
 
