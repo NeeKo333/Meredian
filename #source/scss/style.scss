@@ -218,15 +218,22 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  transform: scale(0);
-  opacity: 0;
-  transition: all 0.8s ease 0s;
-  &.scroll {
-    transform: scale(1);
-    opacity: 1;
-  }
+  // transform: scale(0);
+  // opacity: 0;
+  // transition: all 0.8s ease 0s;
+  // &.scroll {
+  //   transform: scale(1);
+  //   opacity: 1;
+  // }
   img {
     max-width: 100%;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.scroll {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   h3 {
     font-family: "Outfit";
@@ -238,6 +245,14 @@ body {
     letter-spacing: 0.265em;
     text-transform: uppercase;
     color: #ffffff;
+    max-width: 100%;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.scroll {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 
   p {
@@ -248,6 +263,13 @@ body {
     line-height: 33px;
     text-align: center;
     color: #ffffff;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &.scroll {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
   &:nth-child(1),
   &:nth-child(2) {

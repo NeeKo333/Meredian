@@ -359,19 +359,19 @@ body.lock {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+}
+.accomplishments_item img {
+  max-width: 100%;
   -webkit-transform: scale(0);
           transform: scale(0);
   opacity: 0;
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
-.accomplishments_item.scroll {
+.accomplishments_item img.scroll {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 1;
-}
-.accomplishments_item img {
-  max-width: 100%;
 }
 .accomplishments_item h3 {
   font-family: "Outfit";
@@ -383,6 +383,17 @@ body.lock {
   letter-spacing: 0.265em;
   text-transform: uppercase;
   color: #ffffff;
+  max-width: 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.accomplishments_item h3.scroll {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
 }
 .accomplishments_item p {
   font-family: "HKGrotesk";
@@ -392,6 +403,16 @@ body.lock {
   line-height: 33px;
   text-align: center;
   color: #ffffff;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+.accomplishments_item p.scroll {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
 }
 .accomplishments_item:nth-child(1), .accomplishments_item:nth-child(2) {
   position: relative;
