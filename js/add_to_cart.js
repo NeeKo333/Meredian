@@ -1,4 +1,4 @@
-export function addToCart() {
+export function addTo_Cart() {
   const card_items = document.querySelectorAll(".collection_card");
   const cartIcon = document.querySelector(".cart");
   const cart = document.querySelector(".cart_body");

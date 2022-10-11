@@ -530,11 +530,9 @@ input[type="range"]::-moz-range-thumb {
           }
         }
       }
-      // &:hover {
-      //   .add_to_cart_btn {
-      //     display: block;
-      //   }
-      // }
+      &.not_searched {
+        display: none;
+      }
     }
   }
   .catalog_pagination {
@@ -679,6 +677,7 @@ input[type="range"]::-moz-range-thumb {
     padding: 0;
     margin: 0;
     border: 0;
+    z-index: -1;
   }
 }
 

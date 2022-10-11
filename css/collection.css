@@ -689,6 +689,9 @@ input[type=range]::-moz-range-thumb {
 .collection_catalog .catalog_cards .collection_card .cards_info .cards_info_cost span {
   color: #ff5b5b;
 }
+.collection_catalog .catalog_cards .collection_card.not_searched {
+  display: none;
+}
 .collection_catalog .catalog_pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -858,6 +861,7 @@ input[type=range]::-moz-range-thumb {
     padding: 0;
     margin: 0;
     border: 0;
+    z-index: -1;
   }
 }
 @keyframes hide {
@@ -869,6 +873,7 @@ input[type=range]::-moz-range-thumb {
     padding: 0;
     margin: 0;
     border: 0;
+    z-index: -1;
   }
 }
 /*--------------------------------------------------------------------------------------------*/

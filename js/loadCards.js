@@ -1,16 +1,16 @@
-import { addToCart } from "/js/add_to_cart.js";
+import { addTo_Cart } from "/js/add_to_cart.js";
 import { filterFn } from "/js/filter.js";
 
 /*------------functions--------------*/
 
 async function getGardsFromFile() {
-  const file = "json/cards.json";
+  const url = "json/cards.json";
 
-  let response = await fetch(file, { method: "GET" });
+  let response = await fetch(url, { method: "GET" });
   if (response.ok) {
     let result = await response.json();
     loadCards(result);
-    addToCart();
+    addTo_Cart();
     filterFn();
   } else {
     alert("Data base Error!");
@@ -25,7 +25,9 @@ function loadCards(data) {
     const itemCatalog = document.querySelector(".catalog_cards");
 
     const tamplate = `<div data-card_id=${itemId} class="collection_card ${itemName}">
-    <img src="${itemSrc}" alt="" />
+    <a href=/Cards/?product-id=${itemId} target="_blank">
+      <img src="${itemSrc}" alt="" />
+    </a>
     <div class="add_to_cart_btn">
       <button>ADD TO CART</button>
     </div>

@@ -81,6 +81,7 @@ $Transition: all 0.6s ease 0s;
   gap: 15px;
   position: relative;
   .cart {
+    order: 2;
     &:hover {
       cursor: pointer;
     }
@@ -88,7 +89,7 @@ $Transition: all 0.6s ease 0s;
   .cart_span_qty {
     position: absolute;
     top: 0;
-    left: 30%;
+    left: 100%;
     width: 15px;
     height: 15px;
     color: #ffff;
@@ -100,6 +101,10 @@ $Transition: all 0.6s ease 0s;
     &.active {
       background-color: darkorange;
     }
+  }
+  .search {
+    order: 1;
+    cursor: pointer;
   }
 }
 
@@ -160,6 +165,24 @@ $Transition: all 0.6s ease 0s;
       &.empty {
         display: none;
       }
+    }
+  }
+}
+
+.search_form {
+  position: relative;
+  .search_input {
+    border: 1px solid gray;
+    position: absolute;
+    height: 25px;
+    width: 0;
+    opacity: 0;
+    right: -100%;
+    top: 13%;
+    transition: all 0.3s ease 0s;
+    &.open {
+      width: 400px;
+      opacity: 1;
     }
   }
 }
