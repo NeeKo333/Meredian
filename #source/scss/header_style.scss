@@ -172,6 +172,7 @@ $Transition: all 0.6s ease 0s;
 .search_form {
   position: relative;
   .search_input {
+    margin-right: 10px;
     z-index: 99;
     border: 1px solid gray;
     position: absolute;
@@ -321,10 +322,23 @@ $Transition: all 0.6s ease 0s;
   .header_back {
     height: 110px;
   }
-
+  .header_icons {
+    .cart_span_qty {
+      left: 95%;
+    }
+  }
   .header_body_conteiner {
     &::before {
       top: 110px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header_icons {
+    .cart_span_qty {
+      left: 85%;
+      top: -5px;
     }
   }
 }
@@ -341,6 +355,11 @@ $Transition: all 0.6s ease 0s;
       margin-right: 20px;
       width: 25px;
       height: 25px;
+    }
+
+    .cart_span_qty {
+      left: 75%;
+      top: -5px;
     }
   }
 
@@ -365,6 +384,14 @@ $Transition: all 0.6s ease 0s;
   .header_logo {
     img {
       max-width: 110%;
+    }
+  }
+
+  .search_form {
+    .search_input {
+      &.open {
+        width: 200px;
+      }
     }
   }
 }
@@ -392,6 +419,14 @@ $Transition: all 0.6s ease 0s;
   .title_block {
     .title_block_image {
       gap: 0;
+    }
+  }
+
+  .search_form {
+    .search_input {
+      &.open {
+        width: 150px;
+      }
     }
   }
 }

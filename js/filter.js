@@ -129,6 +129,7 @@ export function filterFn() {
 
     paginationButtons.forEach((el) => {
       el.addEventListener("click", (e) => {
+        deleteNotSearchedClassAfterPagination();
         const visible_pagination = paginationVisible(el);
         paginationButtons.forEach((elem) => {
           if (elem.classList.contains("hide_pag")) {
@@ -178,6 +179,15 @@ export function filterFn() {
           el.previousElementSibling.click();
         }
       });
+    });
+  }
+
+  function deleteNotSearchedClassAfterPagination() {
+    catalog.querySelectorAll(".not_searched").forEach((el) => {
+      el.classList.remove("not_searched");
+      if (document.querySelector(".not_found").classList.contains("active")) {
+        document.querySelector(".not_found").classList.remove("active");
+      }
     });
   }
 
