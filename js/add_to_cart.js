@@ -46,7 +46,7 @@ export function addTo_Cart() {
     cart_item_img_fly.addEventListener("transitionend", (e) => {
       if (targetButton.classList.contains("_fly")) {
         cart_item_img_fly.remove();
-        updateCart(targetButton, cardId);
+        updateCart(cardId);
         localStorageUpdateCart();
         targetButton.classList.remove("_fly");
       }
@@ -66,7 +66,7 @@ export function addTo_Cart() {
     localStorage.setItem("cartListClass", cartListQtyClass);
   }
 
-  function updateCart(targetButton, cardId, cardAdd = true) {
+  function updateCart(cardId, cardAdd = true) {
     const cartProduct = document.querySelector(
       `[data-cart-card_id = "${cardId}"]`
     );
@@ -81,7 +81,6 @@ export function addTo_Cart() {
     if (!cartProduct) {
       const origItem = document.querySelector(`[data-card_id = "${cardId}"]`);
       const origItemImg = origItem.querySelector("img").src;
-      console.log(origItemImg);
       const origItemName = origItem.querySelector(".cards_info_name").innerHTML;
       const cartListContent = `
       <img src = '${origItemImg}' />

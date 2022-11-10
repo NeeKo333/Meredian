@@ -3,12 +3,22 @@ const searchInput = document.querySelector(".search_input");
 const notSearchedCards = document.getElementsByClassName("not_searched");
 const cardsCatalog = document.querySelector(".catalog_cards");
 const notFoundEl = document.querySelector(".not_found");
+const logoMeredian = document.querySelector(".header_logo");
 body.addEventListener("click", (e) => {
   if (e.target === searchIcon) {
     searchInput.classList.toggle("open");
   } else if (e.target != searchIcon && e.target != searchInput) {
     searchInput.classList.remove("open");
   }
+  if (searchInput.classList.contains("open") && window.innerWidth < 1100)
+    logoMeredian.style.cssText = `opacity: 0`;
+  if (!searchInput.classList.contains("open"))
+    logoMeredian.style.cssText = `opacity: 1`;
+});
+window.addEventListener("resize", (e) => {
+  if (searchInput.classList.contains("open") && window.innerWidth < 1100)
+    logoMeredian.style.cssText = `opacity: 0`;
+  if (window.innerWidth > 1100) logoMeredian.style.cssText = `opacity: 1`;
 });
 
 function search() {

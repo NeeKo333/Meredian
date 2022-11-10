@@ -229,7 +229,6 @@ export function filterFn() {
         const active_lists = document.querySelectorAll(
           ".sub_category_item.active"
         );
-        console.log(active_lists.length);
         if (active_lists.length < 1) {
           cards.forEach((el) => {
             el.classList.remove("hide");
