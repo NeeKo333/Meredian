@@ -8,13 +8,13 @@ if (animationItems.length > 0) {
       const animatedItem = el;
       const animatedItemHeight = animatedItem.offsetHeight;
       const animatedItemOffset = offsetEl(animatedItem).top;
-      const animationStart = 6;
+      const animationStart = 86;
 
       let animatedItemPoint =
         window.innerHeight - animatedItemHeight / animationStart;
 
       if (animatedItemHeight > innerHeight) {
-        let animatedItemPoint =
+        animatedItemPoint =
           window.innerHeight - window.innerHeight / animationStart;
       }
 
