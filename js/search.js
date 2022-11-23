@@ -39,7 +39,6 @@ function search() {
         notFoundEl.classList.remove("active");
       }
     });
-    console.log(notSearchedCards.length);
   });
 }
 search();
