@@ -110,8 +110,8 @@ $Transition: all 0.6s ease 0s;
 
 .cart_body {
   position: absolute;
-  border: 1px solid gray;
-  background-color: #bebfbe;
+  border: 3px solid $Green;
+  background-color: #faf1df;
   top: 50px;
   right: 0;
   padding: 15px;
@@ -124,9 +124,18 @@ $Transition: all 0.6s ease 0s;
     opacity: 1;
     visibility: visible;
   }
+  .clear_cart {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
   .cart_list {
     overflow: auto;
     max-height: 200px;
+    span {
+      font-weight: bold;
+    }
     &_body {
       flex: 1 1 auto;
       display: flex;
@@ -147,7 +156,6 @@ $Transition: all 0.6s ease 0s;
     &_delete {
       color: red;
       background-color: rgba($color: #ffff, $alpha: 0);
-      text-decoration: underline;
     }
     &_item {
       display: flex;
@@ -195,7 +203,7 @@ $Transition: all 0.6s ease 0s;
   opacity: 1;
   z-index: 100;
   position: fixed;
-  transition: all 1s ease 0s;
+  transition: all 0.65s ease 0s;
 }
 
 @media (max-width: 1745.98px) {

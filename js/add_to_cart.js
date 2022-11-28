@@ -43,13 +43,17 @@ export function addTo_Cart() {
     opacity: 0;
   `;
 
+    const buttons = document.querySelector(".catalog_pagination");
+    buttons.style.cssText = `pointer-events: none`;
+
     cart_item_img_fly.addEventListener("transitionend", (e) => {
       if (targetButton.classList.contains("_fly")) {
         cart_item_img_fly.remove();
         updateCart(cardId);
         localStorageUpdateCart();
         targetButton.classList.remove("_fly");
-      }
+      } else if (document.querySelectorAll("._fly").length === 0)
+        buttons.style.cssText = `pointer-events: auto`;
     });
   }
 
