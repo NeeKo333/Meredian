@@ -7,7 +7,7 @@ setTimeout(() => {
 }, 2000);
 
 function timer() {
-  const targetDate = new Date(2022, 11, 12);
+  const targetDate = new Date(2023, 11, 12);
   let currentDate = new Date();
   const gap = targetDate - currentDate;
 
